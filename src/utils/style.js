@@ -11,6 +11,8 @@ export const theme = {
     background: {
       main: '#545050',
     },
+    blackText: '#000000',
+    error: '#ccbe26',
   },
   spacing: unit => unit * 8,
 };

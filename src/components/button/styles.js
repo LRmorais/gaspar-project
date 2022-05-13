@@ -14,4 +14,10 @@ export const styles = StyleSheet.create({
     fontSize: theme.spacing(3),
     color: theme.colors.secondary.main,
   },
+  simpleContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: theme.spacing(1),
+    marginVertical: theme.spacing(2),
+  },
 });
