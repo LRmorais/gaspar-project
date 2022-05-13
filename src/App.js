@@ -1,10 +1,12 @@
 import React from 'react';
-import {View} from 'react-native';
-
-// import { Container } from './styles';
+import Screens from './screens';
 
 const App = () => {
-  return <View />;
+  return (
+    <>
+      <Screens.SignIn />
+    </>
+  );
 };
 
 export default App;
