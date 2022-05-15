@@ -4,7 +4,7 @@ import {theme} from '../../utils/style';
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: theme.colors.primary.main,
-    borderRadius: 5,
+    borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
     padding: theme.spacing(2),
