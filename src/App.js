@@ -4,7 +4,7 @@ import Screens from './screens';
 const App = () => {
   return (
     <>
-      <Screens.ChooseRegister />
+      <Screens.NoIfood />
     </>
   );
 };
