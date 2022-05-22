@@ -50,7 +50,7 @@ const Screen = () => {
           //error={errors.contato && errors.contato.message}
         />
   
-        <Button title="Entrar" onPress={handleSubmit(handleSignin)} />
+        <Button title="Cadastrar" onPress={handleSubmit(handleSignin)} />
       
       </PaddingContainer>
     </SafeAreaView>
