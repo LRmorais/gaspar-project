@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
 import {PaddingContainer} from '../../components/paddingContainer';
 import {Button} from '../../components/button';
 import {useContext} from './context';
@@ -8,14 +9,15 @@ import {theme} from '../../utils/style';
 
 const Screen = () => {
   const {goToNextScreen} = useContext();
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView>
       <PaddingContainer>
         <View style={styles.container}>
           <Text style={styles.askText}>Possui cadastro no Ifood?</Text>
-          <Button title="Sim" onPress={goToNextScreen} />
-          <Button title="Não" onPress={goToNextScreen} />
+          <Button title="Sim"  onPress={() => navigation.navigate('Cadastro2')} />
+          <Button title="Não"  onPress={() => navigation.navigate('Cadastro4')} />
         </View>
       </PaddingContainer>
     </SafeAreaView>

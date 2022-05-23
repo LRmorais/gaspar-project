@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
 
+import { useNavigation } from '@react-navigation/native';
 import {PaddingContainer} from '../../components/paddingContainer';
 import {Button, SimpleButton} from '../../components/button';
 import {InputForm} from '../../components/inputForm';
@@ -8,6 +9,7 @@ import {useContext} from './context';
 
 const Screen = () => {
   const {handleSignin, control, handleSubmit, errors} = useContext();
+  const navigation = useNavigation();
 
   return (
     // <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -33,7 +35,7 @@ const Screen = () => {
         <Button title="Entrar" onPress={handleSubmit(handleSignin)} />
         <SimpleButton
           title="Criar Conta"
-          onPress={handleSubmit(handleSignin)}
+          onPress={() => navigation.navigate('Cadastro3')}
         />
       </PaddingContainer>
     </SafeAreaView>
