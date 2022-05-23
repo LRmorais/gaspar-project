@@ -17,7 +17,7 @@ const Screen = () => {
           autoCapitalize="none"
           label="Nome"
           placeholder="Nome Completo"
-          name="email"
+          name="nome"
           keyboardType="default"
           control={control}
           //error={errors.nome && errors.nome.message}
@@ -34,7 +34,7 @@ const Screen = () => {
         <InputForm
           autoCapitalize="none"
           label="ID"
-          placeholder="Identidade"
+          placeholder="Ifood ID"
           name="ID"
           keyboardType="number-pad"
           control={control}
