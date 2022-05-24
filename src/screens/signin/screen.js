@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Image, StyleSheet, View } from 'react-native';
+import { ScrollView, Image, StyleSheet, View } from 'react-native';
 
 import { PaddingContainer } from '../../components/paddingContainer';
 import { Button, SimpleButton } from '../../components/button';
@@ -11,52 +11,61 @@ const Screen = () => {
 
   return (
     // <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-    <SafeAreaView>
+    <ScrollView style={{ flex: 1 }}>
       <PaddingContainer>
-        <View style={styles.containerImage}>
-          <Image
-            style={styles.logo}
-            source={require('../../assets/logo.jpg')}
+        <View
+          style={{
+            flexDirection: 'column',
+            // justifyContent: 'center',
+            alignContent: 'space-between',
+            height: '100%',
+            width: '100%',
+          }}>
+          <View style={styles.containerImage}>
+            <Image
+              style={styles.logo}
+              source={require('../../assets/logo.jpg')}
+            />
+          </View>
+
+          <InputForm
+            autoCapitalize="none"
+            label="Email"
+            placeholder="Seu Email"
+            name="email"
+            keyboardType="email-address"
+            control={control}
+            error={errors.email && errors.email.message}
+          />
+          <InputForm
+            label="Senha"
+            placeholder="Sua Senha"
+            name="password"
+            control={control}
+            secureTextEntry={true}
+            error={errors.password && errors.password.message}
+          />
+          <Button title="Entrar" onPress={handleSubmit(handleSignin)} />
+          <SimpleButton
+            title="Criar Conta"
+            onPress={handleSubmit(handleSignin)}
           />
         </View>
-
-        <InputForm
-          autoCapitalize="none"
-          label="Email"
-          placeholder="Seu Email"
-          name="email"
-          keyboardType="email-address"
-          control={control}
-          error={errors.email && errors.email.message}
-        />
-        <InputForm
-          label="Senha"
-          placeholder="Sua Senha"
-          name="password"
-          control={control}
-          secureTextEntry={true}
-          error={errors.password && errors.password.message}
-        />
-        <Button title="Entrar" onPress={handleSubmit(handleSignin)} />
-        <SimpleButton
-          title="Criar Conta"
-          onPress={handleSubmit(handleSignin)}
-        />
       </PaddingContainer>
-    </SafeAreaView>
+    </ScrollView>
     // </TouchableWithoutFeedback>
   );
 };
 
 const styles = StyleSheet.create({
   containerImage: {
-    flexDirection: 'row',
     justifyContent: 'center',
+    // flexDirection: 'row',
   },
   logo: {
     resizeMode: 'contain',
     width: 350,
-    height: 350,
+    height: 250,
   },
 });
 

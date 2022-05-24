@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {theme} from '../../utils/style';
+import { StyleSheet } from 'react-native';
+import { theme } from '../../utils/style';
 
 export const styles = StyleSheet.create({
   container: {
@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     marginVertical: theme.spacing(2),
   },
   text: {
-    fontSize: theme.spacing(3),
+    fontSize: theme.spacing(2.5),
     color: theme.colors.secondary.main,
   },
   simpleContainer: {
