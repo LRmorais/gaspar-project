@@ -5,15 +5,15 @@ const Context = createContext();
 export const useContext = () => useReactContext(Context);
 
 const Provider = props => {
-  const navigation = useNavigation();
+  const {navigate, goBack} = useNavigation();
 
   function goToNextScreen(type) {
-    type === 'hasIfood'
-      ? navigation.navigate('HasIfood')
-      : navigation.navigate('NoIfood');
+    type === 'hasIfood' ? navigate('HasIfood') : navigate('NoIfood');
   }
+
   const value = {
     goToNextScreen,
+    goBack,
   };
 
   return <Context.Provider value={value}>{props.children}</Context.Provider>;

@@ -1,13 +1,16 @@
 import React, {createContext, useState, useContext} from 'react';
 import {Alert} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {api} from '../services/api';
 const AuthContext = createContext({});
 
 function AuthProvider({children}) {
+  const {navigate} = useNavigation();
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   async function signIn({email, password}) {
-    console.log('testeee', email);
+    setLoading(true);
     try {
       const response = await api.post('/signin', {
         email,
@@ -15,7 +18,10 @@ function AuthProvider({children}) {
       });
 
       setData(response.data);
+      setLoading(false);
+      navigate('Home');
     } catch (error) {
+      setLoading(false);
       Alert.alert('Ooops! Erro na requisição!');
     }
   }
@@ -24,6 +30,7 @@ function AuthProvider({children}) {
       value={{
         user: data.user,
         signIn,
+        loading,
       }}>
       {children}
     </AuthContext.Provider>

@@ -1,20 +1,33 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
-import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
-import { ScrollView } from 'react-native';
-import { PaddingContainer } from '../../components/paddingContainer';
-import { Button, SimpleButton } from '../../components/button';
-import { InputForm } from '../../components/inputForm';
-import { useContext } from './context';
+import {
+  SafeAreaView,
+  ScrollView,
+  View,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
+import {PaddingContainer} from '../../components/paddingContainer';
+import {Button, SimpleButton} from '../../components/button';
+import {InputForm} from '../../components/inputForm';
+import {useContext} from './context';
+
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Screen = () => {
-  const { handleSignin, control, handleSubmit, errors } = useContext();
+  const {handleSignin, control, handleSubmit, errors, goBack} = useContext();
 
   return (
     // <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
     <SafeAreaView>
-      <ScrollView style={{ textAlign: 'center' }}>
-        <PaddingContainer>
+      <PaddingContainer>
+        <View style={styles.backButton}>
+          <TouchableOpacity onPress={goBack} activeOpacity={0.7}>
+            <Icon name={'arrow-back-outline'} color="#d62a52" size={35} />
+          </TouchableOpacity>
+        </View>
+        <ScrollView style={{textAlign: 'center'}}>
           <InputForm
             autoCapitalize="none"
             label="Nome"
@@ -70,14 +83,20 @@ const Screen = () => {
             error={errors.id && errors.id.message}
           />
 
-
           <Button title="Entrar" onPress={handleSubmit(handleSignin)} />
-
-        </PaddingContainer>
-      </ScrollView>
+        </ScrollView>
+      </PaddingContainer>
     </SafeAreaView>
     // </TouchableWithoutFeedback>
   );
 };
+
+const styles = StyleSheet.create({
+  backButton: {
+    flexDirection: 'row',
+    width: '100%',
+    marginVertical: 15,
+  },
+});
 
 export default Screen;

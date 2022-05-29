@@ -31,6 +31,11 @@ const AppRoutes = () => (
       component={Screens.NoIfood}
       options={navOptionsHandler}
     />
+    <AppStack.Screen
+      name="Home"
+      component={Screens.Home}
+      options={navOptionsHandler}
+    />
   </AppStack.Navigator>
 );
 

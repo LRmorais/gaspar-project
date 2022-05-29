@@ -23,7 +23,7 @@ const Provider = props => {
     resolver: yupResolver(schema),
   });
 
-  const {signIn} = useAuth();
+  const {signIn, loading} = useAuth();
 
   async function handleSignin({email, password}) {
     await schema.validate({email, password});
@@ -35,6 +35,7 @@ const Provider = props => {
     handleSignin,
     control,
     errors,
+    loading,
   };
 
   return <Context.Provider value={value}>{props.children}</Context.Provider>;
