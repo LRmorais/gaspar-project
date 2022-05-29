@@ -1,12 +1,13 @@
-import React, { createContext, useState, useContext } from 'react';
-import { Alert } from 'react-native';
-import { api } from '../services/api';
+import React, {createContext, useState, useContext} from 'react';
+import {Alert} from 'react-native';
+import {api} from '../services/api';
 const AuthContext = createContext({});
 
-function AuthProvider({ children }) {
+function AuthProvider({children}) {
   const [data, setData] = useState([]);
 
-  async function signIn({ email, password }) {
+  async function signIn({email, password}) {
+    console.log('testeee', email);
     try {
       const response = await api.post('/signin', {
         email,
@@ -35,4 +36,4 @@ function useAuth() {
   return context;
 }
 
-export { AuthProvider, useAuth };
+export {AuthProvider, useAuth};

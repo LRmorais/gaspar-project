@@ -6,8 +6,8 @@ import NoIfood from './noIfood';
 
 // exporta as screens aqui
 export default {
-  HasIfood,
-  ChooseRegister,
   SignIn,
-  NoIfood
+  ChooseRegister,
+  HasIfood,
+  NoIfood,
 };
