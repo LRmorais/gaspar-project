@@ -1,10 +1,13 @@
 import React from 'react';
 import Screens from './screens';
+import { AppProvider } from './hooks';
 
 const App = () => {
   return (
     <>
-      <Screens.ChooseRegister />
+      <AppProvider>
+        <Screens.SignIn />
+      </AppProvider>
     </>
   );
 };

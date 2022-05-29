@@ -6,14 +6,17 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "clean": "react-native-clean-project",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
+    "axios": "^0.27.2",
     "react": "17.0.2",
     "react-hook-form": "^7.31.1",
     "react-native": "0.68.2",
+    "react-native-clean-project": "^4.0.1",
     "yup": "^0.32.11"
   },
   "devDependencies": {

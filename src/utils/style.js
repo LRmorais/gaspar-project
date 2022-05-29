@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export const theme = {
   colors: {
@@ -9,7 +9,7 @@ export const theme = {
       main: '#ffffff',
     },
     background: {
-      main: '#545050',
+      main: '#231F1E',
     },
     blackText: '#000000',
     error: '#ccbe26',
