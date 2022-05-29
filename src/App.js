@@ -1,34 +1,38 @@
 import React from 'react';
 import Screens from './screens';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import SignIn from './screens/signin';
+// <<<<<<< feature/signup
+// import { NavigationContainer } from '@react-navigation/native';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import SignIn from './screens/signin';
 
-function HomeScreen() {
-  return (
-    <Screens.SignIn />
-  );
-}
+// function HomeScreen() {
+//   return (
+//     <Screens.SignIn />
+//   );
+// }
 
-function HasIfood(){
-  return (
-    <Screens.HasIfood />
-  )
-}
+// function HasIfood(){
+//   return (
+//     <Screens.HasIfood />
+//   )
+// }
 
-function NoIfood(){
-  return (
-    <Screens.NoIfood />
-  )
-}
+// function NoIfood(){
+//   return (
+//     <Screens.NoIfood />
+//   )
+// }
 
-function ChooseRegister(){
-  return (
-    <Screens.ChooseRegister />
-  )
-}
+// function ChooseRegister(){
+//   return (
+//     <Screens.ChooseRegister />
+//   )
+// }
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
+// =======
+// import { AppProvider } from './hooks';
+// >>>>>>> develop
 
 const App = () => {
   return (
