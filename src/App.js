@@ -1,13 +1,17 @@
 import React from 'react';
-import Screens from './screens';
-import { AppProvider } from './hooks';
+import {AppProvider} from './hooks';
+import {NavigationContainer} from '@react-navigation/native';
+
+import Routes from './routes/app.routes';
 
 const App = () => {
   return (
     <>
-      <AppProvider>
-        <Screens.SignIn />
-      </AppProvider>
+      <NavigationContainer>
+        <AppProvider>
+          <Routes />
+        </AppProvider>
+      </NavigationContainer>
     </>
   );
 };

@@ -1,17 +1,19 @@
 import React, {createContext, useContext as useReactContext} from 'react';
+
+import {useNavigation} from '@react-navigation/native';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 
 import * as yup from 'yup';
 
-import {useAuth} from '../../hooks/auth';
-
 const Context = createContext();
 export const useContext = () => useReactContext(Context);
 
 const schema = yup.object().shape({
-  email: yup.string().required('Email é obrigatorio'),
-  password: yup.string().required('Senha é obrigatoria'),
+  nome: yup.string().required('Nome é obrigatório'),
+  cpf: yup.string().required('CPF é obrigatório'),
+  id: yup.string().required('Identidade é obrigatória'),
+  contato: yup.string().required('Contato é obrigatório'),
 });
 
 const Provider = props => {
@@ -22,20 +24,17 @@ const Provider = props => {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  const {navigate, goBack} = useNavigation();
 
-  const {signIn, loading} = useAuth();
-
-  async function handleSignin({email, password}) {
-    await schema.validate({email, password});
-
-    await signIn({email, password});
+  function handleSignin(form) {
+    console.log(form);
   }
   const value = {
     handleSubmit,
     handleSignin,
     control,
     errors,
-    loading,
+    goBack,
   };
 
   return <Context.Provider value={value}>{props.children}</Context.Provider>;
